@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Bump Version
         run: |
+          git fetch --all --tags
           git describe --tags
