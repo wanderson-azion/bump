@@ -17,6 +17,6 @@ jobs:
           git add VERSION
           git commit --message "Bump"
           git show
-          git push
+          git push origin
           git tag v$VERSION
-          git push v$VERSION
+          git push --tags
