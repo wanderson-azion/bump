@@ -12,7 +12,7 @@ jobs:
       - name: Bump Version
         run: |
           VERSION_SOURCE=$(cat VERSION)
-          VERSION_TARGET=$(($VERSION + 1))
+          VERSION_TARGET=$(($VERSION_SOURCE + 1))
           echo $VERSION_TARGET > VERSION
 
           git config user.name "GitHub Bumper"
