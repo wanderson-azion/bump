@@ -12,9 +12,11 @@ jobs:
       - name: Bump Version
         run: |
           VERSION=$(cat VERSION) && echo $(($VERSION + 1)) > VERSION
-          git config user.name 'GitHub Bumper'
-          git config user.email 'github.bumper@azion.com'
+          git config user.name "GitHub Bumper"
+          git config user.email "github.bumper@azion.com"
           git add VERSION
           git commit --message "Bump"
           git show
           git push
+          git tag v$VERSION
+          git push v$VERSION
