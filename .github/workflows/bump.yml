@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Bump Version
         run: |
-          echo $GITHUB_SHA
+          git rev-parse HEAD --short
