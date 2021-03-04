@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="bump_action_testing",
+    name="bump",
     version="1.0.0",
-    description="Bump Action Testing"
+    description="Bump"
 )

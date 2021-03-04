@@ -1,1 +1,5 @@
-# bump\_action\_testing
+# bump
+
+```
+docker build . --tag bump
+```
