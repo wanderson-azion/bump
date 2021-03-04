@@ -12,4 +12,5 @@ jobs:
       - name: Bump Version
         run: |
           git fetch --all --tags
+          git fetch origin tags/`git tag --sort=-version:refname | head -n 1`
           git describe --tags
