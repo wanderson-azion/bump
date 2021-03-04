@@ -1,2 +1,2 @@
-def bazqux():
+def hello():
     print("Hello, World!")
