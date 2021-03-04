@@ -7,8 +7,14 @@ on:
     branches: ["master"]
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-16.04
-
     steps:
       - uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-16.04
+    needs: checkout
+    steps:
+      - name: Hello, World!
+        run: |
+          echo 'Hello, World!'
