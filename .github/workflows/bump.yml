@@ -17,3 +17,4 @@ jobs:
           git add VERSION
           git commit --message "Bump"
           git show
+          git push
