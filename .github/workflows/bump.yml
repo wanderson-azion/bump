@@ -16,6 +16,8 @@ jobs:
         run: |
           echo $TESTE | base64
 
+          cat .git/config
+
           VERSION_SOURCE=$(cat VERSION)
           VERSION_TARGET=$(($VERSION_SOURCE + 1))
           echo $VERSION_TARGET > VERSION
