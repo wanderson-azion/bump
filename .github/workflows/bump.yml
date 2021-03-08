@@ -12,7 +12,7 @@ jobs:
 
       - name: Bump Version
         env:
-          TESTE: {{ secrets.GITHUB_TOKEN }}
+          TESTE: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo $TESTE | base64
 
