@@ -13,7 +13,7 @@ jobs:
       - name: Bump Version
         run: |
           pip install bump
-          VERSION=`bump`
+          VERSION=`python -m bump`
           git config user.name "GitHub Actions"
           git config user.email "github@azion.com"
           git add setup.py
