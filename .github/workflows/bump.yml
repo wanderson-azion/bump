@@ -11,22 +11,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Bump Version
-        env:
-          TESTE: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo $TESTE | base64
-
-          cat .git/config
-
-          VERSION_SOURCE=$(cat VERSION)
-          VERSION_TARGET=$(($VERSION_SOURCE + 1))
-          echo $VERSION_TARGET > VERSION
-
-          git config user.name "GitHub Bumper"
-          git config user.email "github.bumper@azion.com"
-          git add VERSION
-          git commit --message "Bump"
-
+          pip install bump
+          VERSION=`bump`
+          git config user.name "GitHub Actions"
+          git config user.email "github@azion.com"
+          git add setup.py
+          git commit --message "chore: Bump $VERSION"
           git push
-          git tag $VERSION_TARGET
-          git push --tags
