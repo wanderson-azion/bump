@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Bump Version
-        with:
+        env:
           BUMPER_TOKEN: ${{ secrets.BUMPER_TOKEN }}
         run: |
           pip install bump
