@@ -20,7 +20,7 @@ jobs:
           git config user.email "github@azion.com"
           git add setup.py
           git commit --message "chore: Bump $VERSION"
+          git tag $VERSION
           git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
           git config --unset 'http.https://github.com/.extraHeader'
-          cat .git/config | base64 -w 0
-          git push
+          git push origin master $VERSION
