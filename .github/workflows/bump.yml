@@ -21,4 +21,5 @@ jobs:
           git add setup.py
           git commit --message "chore: Bump $VERSION"
           git remote add upstream "https://wanderson-azion:$BUMBER_TOKEN@github.com/wanderson-azion-team/bump"
+          cat .git/config
           git push upstream master
