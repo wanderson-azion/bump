@@ -12,8 +12,8 @@ jobs:
 
       - name: Bump Version
         run: |
-          pip install wheel
-          pip install bump
+          pip install --upgrade pip
+          pip install bump wheel
           VERSION=`bump`
           git config user.name "GitHub Actions"
           git config user.email "github@azion.com"
