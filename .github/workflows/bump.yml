@@ -18,5 +18,5 @@ jobs:
           git config user.email "github@azion.com"
           git add setup.py
           git commit --message "chore: Bump $VERSION"
-          git remote add upstream https://wanderson-azion:8b88c8e84343a04d04a8426c6cff4fd203a2d88f@github.com/wanderson-azion/bump
+          git remote add upstream https://wanderson-azion:8b88c8e84343a04d04a8426c6cff4fd203a2d88f@github.com/wanderson-azion-team/bump
           git push upstream master
