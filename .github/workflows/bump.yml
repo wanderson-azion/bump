@@ -12,9 +12,8 @@ jobs:
 
       - name: Bump Version
         run: |
-          echo PORUNGA
           pip install bump
-          VERSION=`bump`
+          VERSION=`python -m bump`
           echo "VERSION: $VERSION"
           git config user.name "GitHub Actions"
           git config user.email "github@azion.com"
