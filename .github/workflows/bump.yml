@@ -23,4 +23,4 @@ jobs:
           git tag $VERSION
           git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
           git config --unset 'http.https://github.com/.extraHeader'
-          git push origin master $VERSION
+          git push
