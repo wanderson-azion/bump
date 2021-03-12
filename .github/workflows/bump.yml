@@ -6,14 +6,12 @@ on:
 
 jobs:
   bump:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
       - name: Bump Version
         run: |
-          pip install wheel
-          pip install --upgrade 'pip==19.0.3'
           pip install bump
           VERSION=`bump`
           git config user.name "GitHub Actions"
