@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="bump",
+    name="hello",
     version="1.0.0",
-    description="Bump",
+    description="Hello",
     packages=setuptools.find_packages(),
 )
