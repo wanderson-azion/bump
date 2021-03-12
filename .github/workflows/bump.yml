@@ -12,6 +12,7 @@ jobs:
 
       - name: Bump Version
         run: |
+          echo PORUNGA
           pip install bump
           VERSION=`bump`
           echo "VERSION: $VERSION"
