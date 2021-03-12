@@ -12,6 +12,7 @@ jobs:
 
       - name: Bump Version
         run: |
+          python --version
           pip install bump
           VERSION=`bump`
           git config user.name "GitHub Actions"
