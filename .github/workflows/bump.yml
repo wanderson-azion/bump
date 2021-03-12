@@ -13,7 +13,7 @@ jobs:
       - name: Bump Version
         run: |
           pip install wheel
-          pip install --upgrade pip
+          pip install --upgrade 'pip==19.0.3'
           pip install bump
           VERSION=`bump`
           git config user.name "GitHub Actions"
