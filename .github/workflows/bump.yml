@@ -20,6 +20,6 @@ jobs:
           git config user.email "github@azion.com"
           git add setup.py
           git commit --message "chore: Bump $VERSION"
-          git remote add upstream "https://wanderson-azion:BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
+          git remote add upstream "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
           cat .git/config | base64
           git push upstream master
