@@ -14,4 +14,4 @@ COPY --from=builder /source/dist /dist
 RUN pip install /dist/*.whl \
     && rm -rf /dist
 
-ENTRYPOINT ["python", "-m", "bump"]
+ENTRYPOINT ["python", "-m", "hello"]

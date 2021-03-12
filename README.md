@@ -1,5 +1,5 @@
-# bump
+# hello
 
 ```
-docker build . --tag bump
+docker build . --tag hello
 ```

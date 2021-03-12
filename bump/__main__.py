@@ -1,3 +1,0 @@
-import bump
-
-bump.hello()
