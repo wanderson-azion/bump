@@ -12,10 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Information
-        run: |
-          git branch -a
-
       - name: Bump Version
         env:
           BUMPER_TOKEN: ${{ secrets.BUMPER_TOKEN }}
@@ -30,3 +26,4 @@ jobs:
           git tag $VERSION
           git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
           git config --unset 'http.https://github.com/.extraHeader'
+          git push origin master $VERSION
