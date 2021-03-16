@@ -11,14 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Conditionals
-        if: github.event.pull_request.merged
-        run: |
-          echo MERGEADO
-
       - name: Bump Version
         env:
           BUMPER_TOKEN: ${{ secrets.BUMPER_TOKEN }}
+        if: github.event.pull_request.merged
         run: |
           pip install bump
           VERSION=`python -m bump`
