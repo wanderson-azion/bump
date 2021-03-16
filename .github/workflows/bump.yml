@@ -11,23 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Conditionals
-        if: github.event.pull_request.merged
-        run: |
-          echo MERGEADO
-
       - name: Bump Version
         env:
           BUMPER_TOKEN: ${{ secrets.BUMPER_TOKEN }}
+        if: github.event.pull_request.merged
         run: |
-          env
-          #pip install bump
-          #VERSION=`python -m bump`
-          #git config user.name "GitHub Actions"
-          #git config user.email "github@azion.com"
-          #git add setup.py
-          #git commit --message "chore: Bump $VERSION"
-          #git tag $VERSION
-          #git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
-          #git config --unset 'http.https://github.com/.extraHeader'
-          #git push
+          pip install bump
+          VERSION=`python -m bump`
+          git config user.name "GitHub Actions"
+          git config user.email "github@azion.com"
+          git add setup.py
+          git commit --message "chore: Bump $VERSION"
+          git tag $VERSION
+          git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
+          git config --unset 'http.https://github.com/.extraHeader'
+          git push
