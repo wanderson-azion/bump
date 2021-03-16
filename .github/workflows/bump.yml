@@ -9,7 +9,12 @@ jobs:
   bump:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Information
+        run: |
+          git branch -a
 
       - name: Bump Version
         env:
@@ -25,4 +30,3 @@ jobs:
           git tag $VERSION
           git remote set-url origin "https://wanderson-azion:$BUMPER_TOKEN@github.com/wanderson-azion-team/bump"
           git config --unset 'http.https://github.com/.extraHeader'
-          git push
