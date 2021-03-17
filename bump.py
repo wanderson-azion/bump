@@ -1,7 +1,12 @@
 import re
 import subprocess
 
-version = subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"]).strip()
+try:
+    version = subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"], stderr=subprocess.NULL).strip()
+except:
+    print("1.0.0")
+    exit()
+
 message = subprocess.check_output(["git", "log", "--pretty=format:%s", "--max-count=1"]).strip()
 
 pattern_version = "^(\d+)\.(\d+)\.(\d+)$"
@@ -19,6 +24,7 @@ patch = int(result.group(3))
 
 if re.match(pattern_message, message):
     minor += 1
+    patch = 0
 else:
     patch += 1
 
