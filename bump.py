@@ -2,8 +2,8 @@ import re
 import subprocess
 
 try:
-    version = subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"], stderr=subprocess.NULL).strip()
-except:
+    version = subprocess.check_output(["git", "describe", "--tags", "--abbrev=0"], stderr=subprocess.STDOUT).strip()
+except subprocess.CalledProcessError:
     print("1.0.0")
     exit()
 
